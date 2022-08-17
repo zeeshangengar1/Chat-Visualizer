@@ -1,0 +1,120 @@
+<%-include("partials/header.ejs")%>
+<div class="row text-center" style="min-height:400px">
+    <div class="row text-center">
+        <h1>Analyzed Results</h1>
+        <div class="container ">
+        <div class="row text-center justify-content-start" id="main_div">
+        </div>
+        <div class="container">
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Messages timeline over the period</h2>
+            <img src="/img/timeline.jpg" alt="Image loading soon....." height="400px" width="400px">
+                
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="row text-center">
+            <h2>Messages daily activity over the period</h2>
+            <img src="/img/daily_timeline.jpg" alt="Image loading soon....." height="400px" width="400px">
+        </div>
+        <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Busy days over the period</h2>
+                <img src="/img/busy_day.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Busy months over the period</h2>
+                <img src="/img/busy_month.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Most busy users over the period</h2>
+                <img src="/img/most_busy_users.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Users activity in a heatmap</h2>
+                <img src="/img/user_heatmap.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Emojis used over the period</h2>
+                <img src="/img/emoji.jpg" alt="Image loading soon....." height="500px" width="300px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Most common words used over the period</h2>
+                <img src="/img/most_common_words.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <div class="row text-center">
+                <h2>Wordcloud showing words used in the chat</h2>
+                <img src="/img/wordcloud.jpg" alt="Image loading soon....." height="400px" width="400px">
+            </div>
+           
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+       var ds=`<%-data%>`
+       var arr=ds.split("\n")
+    var k=document.getElementById("main_div");
+    for(i=0;i<arr.length-1;i++)
+    {
+        if(i==0)
+        {
+            var h = document.createElement("pre");
+        h.innerHTML=" ";
+        h.style.fontSize="20px";
+        k.append(h)
+        var h = document.createElement("pre");
+        h.innerHTML=" ";
+        h.style.fontSize="20px";
+        k.append(h)
+        var h = document.createElement("pre");
+        h.innerHTML=arr[i];
+        h.style.fontSize="20px";
+        k.append(h)
+        }
+        else if(i==4)
+        {
+            
+            var h = document.createElement("pre");
+        h.innerHTML=" ";
+        h.style.fontSize="20px";
+        k.append(h)
+        var h = document.createElement("pre");
+        h.innerHTML=" ";
+        h.style.fontSize="20px";
+        k.append(h)
+        var h = document.createElement("h2");
+        h.innerHTML="Percentage of messages sent by Users";
+        // h.style.fontSize="20px";
+        k.append(h)
+        var h = document.createElement("pre");
+        h.innerHTML=arr[i];
+        h.style.fontSize="20px";
+        h.style.color="blue";
+        k.append(h)
+        }
+        else if(i>4){
+        var h = document.createElement("pre");
+        h.innerHTML=arr[i]+"%";
+        h.style.fontSize="20px";
+        k.append(h)
+        }
+        else
+        {
+            var h = document.createElement("pre");
+        h.innerHTML=arr[i];
+        h.style.fontSize="20px";
+        k.append(h)
+
+        }
+    }
+       console.log(arr.length)
+</script>
+
+<%-include("partials/footer.ejs")%>

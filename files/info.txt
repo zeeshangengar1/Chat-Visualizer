@@ -1,0 +1,8 @@
+Total messages sent          :          115 
+Total words used in the chat   :          407  
+Total media links shared     :          4  
+Total links shared          :          0 
+                  Name   %age
+0            Mokarram  54.78
+1       Zeeshan Ahmad  44.35
+2  Group_Notification   0.87 

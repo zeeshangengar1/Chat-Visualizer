@@ -1,0 +1,15 @@
+<%-include('partials/header')%>
+
+<div class="row text-center justify-content-center mx-auto"  style="min-height:400px">
+    <div class="row text-center mx-auto">
+        <h1 style="color:rgb(71, 222, 117)">Welcome to chat analyser</h1>
+        <h3>Export your whatsapp chat and upload here and see interesting visualizations </h3>
+        <form action="/analyze" method="POST" enctype='multipart/form-data'>
+            <input type="file" name="chat_file" id="">
+            <button class="btn analyze mt-3">Analyze Chat</button>
+        </form>
+    </div>
+</div>
+
+
+<%-include('partials/footer')%>
